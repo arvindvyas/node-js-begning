@@ -1,12 +1,12 @@
- const add = (a,b) => {
+  module.exports.add = (a,b) => {
     return a + b;
  }
 
- const substract = (a,b) =>{
+ module.exports.substract = (a,b) =>{
     return a -b;
  }
 
- module.exports = {
-     add,
-     substract,
- };
+//  module.exports = {
+//      add,
+//      substract,
+//  };
