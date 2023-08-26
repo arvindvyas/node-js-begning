@@ -22,7 +22,14 @@ const substract = (a,b) => {
 
 };
 
+// export default {
+//     add: add,
+//     substract: substract,
+// }
+
+// short method to above if key and value are same
 export default {
-    add: add,
-    substract: substract,
+    add,
+    substract,
 }
+
