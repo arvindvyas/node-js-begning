@@ -8,9 +8,26 @@
 
 // type of import 2 , with restracture
 
-import math from "./math-esm.mjs"
+// import math from "./math-esm.mjs"
 
-const {add, substract} = math
+// const {add, substract} = math
 
-console.log(add(3,4));
-console.log(substract(3,3));
+// console.log(add(3,4));
+// console.log(substract(3,3));
+
+
+// for type 4 import willl be change 
+//  first way to import name export
+// import * as math from "./math-esm.mjs"
+// const {add, substract} = math
+// console.log(add(2,3));
+// console.log(substract(3,3));
+
+
+// second way to import name export
+
+import {add, substract} from "./math-esm.mjs"
+
+console.log(add(2,3));
+console.log(substract(3,4));
+

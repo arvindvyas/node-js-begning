@@ -13,14 +13,14 @@
 
 // ## export type 3 one by one 
 
-const add = (a, b) => {
-    return a + b;
-};
+// const add = (a, b) => {
+//     return a + b;
+// };
 
-const substract = (a,b) => {
-    return a -b ;
+// const substract = (a,b) => {
+//     return a -b ;
 
-};
+// };
 
 // export default {
 //     add: add,
@@ -28,8 +28,21 @@ const substract = (a,b) => {
 // }
 
 // short method to above if key and value are same
-export default {
-    add,
-    substract,
-}
+// export default {
+//     add,
+//     substract,
+// }
+
+
+// type 4 name export 
+
+export const add = (a,b)=>{
+    return a + b;
+};
+
+export const substract = (a,b) =>{
+    return a -b;
+
+};
+
 
