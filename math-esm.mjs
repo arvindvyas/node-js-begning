@@ -7,6 +7,22 @@
 
 // ## second type of export method
 
-export default(a,b) => {
+// export default(a,b) => {
+//     return a + b;
+// }
+
+// ## export type 3 one by one 
+
+const add = (a, b) => {
     return a + b;
+};
+
+const substract = (a,b) => {
+    return a -b ;
+
+};
+
+export default {
+    add: add,
+    substract: substract,
 }
