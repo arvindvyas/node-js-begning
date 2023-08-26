@@ -1,5 +1,12 @@
-const add = (a,b) => {
-    return a+ b
-};
+//  ## first type of export method
+// const add = (a,b) => {
+//     return a+ b
+// };
 
-export default add;
+// export default add;
+
+// ## second type of export method
+
+export default(a,b) => {
+    return a + b;
+}
