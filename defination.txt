@@ -18,3 +18,13 @@ Build in module
   1. Make it perfectly clear that import is node.js buildid module.
   2. Make this import indentifier as a valid absolute URL
   3. Avoid conflicts for future node.js built in modules.
+
+
+  *** callbacks ****
+  - Funcation are first class objects 
+  - Funcation can pass as argument to the function.
+  - Funcation can return as value from other funcation.
+
+  * Type of callbacks
+  1. Synchronous callbacks
+  2. Asynchronous callbacks
