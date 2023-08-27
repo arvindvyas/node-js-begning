@@ -84,13 +84,22 @@
 
 // ** self event module creation 
 
-const PizzaShop = require("./pizza-shop");
-const DrinkMachine = require("./drink-machine");
-const pizzaShop = new PizzaShop();
-const drinkMachine = new DrinkMachine();
-pizzaShop.on("order", (size, topping)=>{
-  console.log(`Order recived !! Baking ${size} pizza with ${topping}` )
-  drinkMachine.serveDrink(size);
-})
-pizzaShop.order("large", "double chees");
-pizzaShop.displayOrder();
+// const PizzaShop = require("./pizza-shop");
+// const DrinkMachine = require("./drink-machine");
+// const pizzaShop = new PizzaShop();
+// const drinkMachine = new DrinkMachine();
+// pizzaShop.on("order", (size, topping)=>{
+//   console.log(`Order recived !! Baking ${size} pizza with ${topping}` )
+//   drinkMachine.serveDrink(size);
+// })
+// pizzaShop.order("large", "double chees");
+// pizzaShop.displayOrder();
+
+// ** Buffer
+
+const buffer = new Buffer.from("Arvind");
+// buffer.write("Kumar Vyas"); wil prent kumar 
+console.log(buffer.toJSON());
+console.log(buffer);
+
+console.log(buffer.toString());
