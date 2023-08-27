@@ -49,18 +49,35 @@
 // - Funcation can pass as argument to the function.
 // - Funcation can return as value from other funcation.
 
-function greet(name){
-    console.log(`Hello ${name}`)
-}
+// function greet(name){
+//     console.log(`Hello ${name}`)
+// }
 
-function greetArvind(greetFn){
-    const name = "Arvind";
-    greetFn(name);
-}
-greetArvind(greet);
+// function greetArvind(greetFn){
+//     const name = "Arvind";
+//     greetFn(name);
+// }
+// greetArvind(greet);
 
-function higherOrderFuncation(callback){
-    const name = "Arvind Vyas";
-    callback(name);
-}
-higherOrderFuncation(greet);
+// function higherOrderFuncation(callback){
+//     const name = "Arvind Vyas";
+//     callback(name);
+// }
+// higherOrderFuncation(greet);
+
+// ** Events Module *** 
+const EventEmitter = require("node:events");
+const emitter = new EventEmitter();
+
+emitter.on("order-pizza", (size, toppings)=>{
+  console.log(`order recevied! Bakking a ${size} pizza with ${toppings}`);
+})
+
+emitter.on("order-pizza", (size)=>{
+    if (size == "large"){
+      console.log("apni cold drink sath leke aana");
+    }
+})
+
+console.log("Do work before events occure into the system");
+emitter.emit("order-pizza", "large", "chees");

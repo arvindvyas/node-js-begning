@@ -28,3 +28,9 @@ Build in module
   * Type of callbacks
   1. Synchronous callbacks
   2. Asynchronous callbacks
+
+  ** Event Module *** 
+  - Event module allows to work with events in node.js
+  - An event is an action or an occurance  that happend in  our applications 
+  that we can respond to.
+  - Using the event module we can dispath our own custom events and respond to those event in non blocking manner 
