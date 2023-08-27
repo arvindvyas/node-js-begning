@@ -182,17 +182,33 @@
 // readableStreem.pipe(writableStreem);
 // readableStreem.pipe(gzip).pipe(fs.WriteStream("./file2.txt.gza"))
 
+// const http = require("node:http");
+// const superHero = {
+//     "Name": "Arvind",
+//     "Last Name": "Vyas",
+// }
+
+// const server = http.createServer((req, res)=>{
+//     res.writeHead("200", {"Content-Type": "application/json"});
+//     res.end(JSON.stringify(superHero));
+// })
+
+// server.listen(3000,()=>{
+//     console.log("server is running in port 3000");
+// } )
+
+// ** html response
+
 const http = require("node:http");
-const superHero = {
-    "Name": "Arvind",
-    "Last Name": "Vyas",
-}
+const fs = require("node:fs");
 
 const server = http.createServer((req, res)=>{
-    res.writeHead("200", {"Content-Type": "application/json"});
-    res.end(JSON.stringify(superHero));
+  res.writeHead("200", {"Content-type": "text/html"});
+//   const html = fs.readFileSync("./index.html", "utf-8");
+fs.createReadStream(__dirname+"/index.html").pipe(res);
+//   res.end(html)
 })
 
 server.listen(3000,()=>{
-    console.log("server is running in port 3000");
-} )
+  console.log("server is running in port 3000");
+ } )
