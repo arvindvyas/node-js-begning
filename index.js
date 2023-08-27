@@ -66,18 +66,31 @@
 // higherOrderFuncation(greet);
 
 // ** Events Module *** 
-const EventEmitter = require("node:events");
-const emitter = new EventEmitter();
+// const EventEmitter = require("node:events");
+// const emitter = new EventEmitter();
 
-emitter.on("order-pizza", (size, toppings)=>{
-  console.log(`order recevied! Bakking a ${size} pizza with ${toppings}`);
+// emitter.on("order-pizza", (size, toppings)=>{
+//   console.log(`order recevied! Bakking a ${size} pizza with ${toppings}`);
+// })
+
+// emitter.on("order-pizza", (size)=>{
+//     if (size == "large"){
+//       console.log("apni cold drink sath leke aana");
+//     }
+// })
+
+// console.log("Do work before events occure into the system");
+// emitter.emit("order-pizza", "large", "chees");
+
+// ** self event module creation 
+
+const PizzaShop = require("./pizza-shop");
+const DrinkMachine = require("./drink-machine");
+const pizzaShop = new PizzaShop();
+const drinkMachine = new DrinkMachine();
+pizzaShop.on("order", (size, topping)=>{
+  console.log(`Order recived !! Baking ${size} pizza with ${topping}` )
+  drinkMachine.serveDrink(size);
 })
-
-emitter.on("order-pizza", (size)=>{
-    if (size == "large"){
-      console.log("apni cold drink sath leke aana");
-    }
-})
-
-console.log("Do work before events occure into the system");
-emitter.emit("order-pizza", "large", "chees");
+pizzaShop.order("large", "double chees");
+pizzaShop.displayOrder();
