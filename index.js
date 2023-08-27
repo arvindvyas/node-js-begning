@@ -155,15 +155,29 @@
 
 // readFile();
 
-const fs = require("node:fs");
+// const fs = require("node:fs");
 
-const readableStreem = fs.createReadStream("./file.txt", 
-{encoding: "utf-8",
-highWaterMark: 2,
-});
+// const readableStreem = fs.createReadStream("./file.txt", 
+// {encoding: "utf-8",
+// highWaterMark: 2,
+// // });
+// // const writableStreem = fs.createWriteStream("./file2.txt");
+
+// // readableStreem.on("data", (chunk)=>{
+// //   console.log(chunk);
+// //   writableStreem.write(chunk);
+// })
+
+// ** Pipe
+
+const fs = require("node:fs");
+const zlib = require("node:zlib");
+const gzip = zlib.createGzip(); 
+const readableStreem = fs.createReadStream("./file.txt", {
+  encoding: "utf-8",
+  highWaterMark: 2,
+})
 const writableStreem = fs.createWriteStream("./file2.txt");
 
-readableStreem.on("data", (chunk)=>{
-  console.log(chunk);
-  writableStreem.write(chunk);
-})
+readableStreem.pipe(writableStreem);
+readableStreem.pipe(gzip).pipe(fs.WriteStream("./file2.txt.gza"))
