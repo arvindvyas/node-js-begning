@@ -170,14 +170,25 @@
 
 // ** Pipe
 
-const fs = require("node:fs");
-const zlib = require("node:zlib");
-const gzip = zlib.createGzip(); 
-const readableStreem = fs.createReadStream("./file.txt", {
-  encoding: "utf-8",
-  highWaterMark: 2,
-})
-const writableStreem = fs.createWriteStream("./file2.txt");
+// const fs = require("node:fs");
+// const zlib = require("node:zlib");
+// const gzip = zlib.createGzip(); 
+// const readableStreem = fs.createReadStream("./file.txt", {
+//   encoding: "utf-8",
+//   highWaterMark: 2,
+// })
+// const writableStreem = fs.createWriteStream("./file2.txt");
 
-readableStreem.pipe(writableStreem);
-readableStreem.pipe(gzip).pipe(fs.WriteStream("./file2.txt.gza"))
+// readableStreem.pipe(writableStreem);
+// readableStreem.pipe(gzip).pipe(fs.WriteStream("./file2.txt.gza"))
+
+const http = require("node:http");
+
+const server = http.createServer((req, res)=>{
+    res.writeHead("200", {"Content-Type": "text/plan"});
+    res.end("Hello World");
+})
+
+server.listen(3000,()=>{
+    console.log("server is running in port 3000");
+} )
