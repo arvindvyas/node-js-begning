@@ -1,0 +1,20 @@
+Build in module 
+
+  - Module with node js ships with 
+  - Also referred to as core module.
+  - need to import the module before use it
+    * path 
+    * events 
+    * fs 
+    * stream 
+    * http 
+
+- Path Module 
+  - The path module provides utilities for working with file and directory path.
+
+
+  Node - Protocall
+
+  1. Make it perfectly clear that import is node.js buildid module.
+  2. Make this import indentifier as a valid absolute URL
+  3. Avoid conflicts for future node.js built in modules.
