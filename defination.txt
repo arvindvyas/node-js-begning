@@ -34,3 +34,14 @@ Build in module
   - An event is an action or an occurance  that happend in  our applications 
   that we can respond to.
   - Using the event module we can dispath our own custom events and respond to those event in non blocking manner 
+
+
+  ** type of streem ** 
+
+1. Readable streems from which data can be read.
+2. Writable streems to which data can be write.
+3. Duplex streems that can be readable and writable.
+4.Transform streems can be modify on transform the data as it is written and read.
+
+read and write already we saw 
+than socket is duplex streems and file compression is transform streem

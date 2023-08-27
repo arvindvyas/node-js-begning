@@ -134,7 +134,7 @@
 // })
 
 // ** fs promise ** 
-const fs = require("node:fs/promises");
+// const fs = require("node:fs/promises");
 // console.log("first");
 // fs.readFile("./file.txt", 'utf-8')
 //     .then(data=>console.log(data))
@@ -142,15 +142,28 @@ const fs = require("node:fs/promises");
 
 // console.log("last");
 
-async function readFile(){
-    try{
-      const data = await fs.readFile("file.txt", "utf-8");
-      console.log(data);
-    }catch(error){
-        console.log(error);
+// async function readFile(){
+//     try{
+//       const data = await fs.readFile("file.txt", "utf-8");
+//       console.log(data);
+//     }catch(error){
+//         console.log(error);
 
-    }
+//     }
 
-}
+// }
 
-readFile();
+// readFile();
+
+const fs = require("node:fs");
+
+const readableStreem = fs.createReadStream("./file.txt", 
+{encoding: "utf-8",
+highWaterMark: 2,
+});
+const writableStreem = fs.createWriteStream("./file2.txt");
+
+readableStreem.on("data", (chunk)=>{
+  console.log(chunk);
+  writableStreem.write(chunk);
+})
