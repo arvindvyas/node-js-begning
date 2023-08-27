@@ -97,9 +97,38 @@
 
 // ** Buffer
 
-const buffer = new Buffer.from("Arvind");
-// buffer.write("Kumar Vyas"); wil prent kumar 
-console.log(buffer.toJSON());
-console.log(buffer);
+// const buffer = new Buffer.from("Arvind");
+// // buffer.write("Kumar Vyas"); wil prent kumar 
+// console.log(buffer.toJSON());
+// console.log(buffer);
 
-console.log(buffer.toString());
+// console.log(buffer.toString());
+
+// ** FS module **
+
+const fs = require("node:fs")
+console.log("first");
+const fileContents = fs.readFileSync("./file.txt", "utf-8");
+console.log(fileContents);
+console.log("second");
+fs.readFile("./file.txt", "utf-8",(error, data)=>{
+  if (error){
+    console.log(error);
+  }else{
+    console.log(data);
+  }
+})
+console.log("third");
+
+// write file
+fs.writeFileSync("./greet.txt", "Hello World!");
+
+// async version of file write
+
+fs.writeFile("./greet.txt", " Hello Arvind",{flag: "a"}, (err)=>{
+    if (err){
+      console.log(err);
+    }else{
+      console.log("file written");
+    }
+})
