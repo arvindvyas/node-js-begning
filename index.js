@@ -106,29 +106,51 @@
 
 // ** FS module **
 
-const fs = require("node:fs")
-console.log("first");
-const fileContents = fs.readFileSync("./file.txt", "utf-8");
-console.log(fileContents);
-console.log("second");
-fs.readFile("./file.txt", "utf-8",(error, data)=>{
-  if (error){
-    console.log(error);
-  }else{
-    console.log(data);
-  }
-})
-console.log("third");
+// const fs = require("node:fs")
+// console.log("first");
+// const fileContents = fs.readFileSync("./file.txt", "utf-8");
+// console.log(fileContents);
+// console.log("second");
+// fs.readFile("./file.txt", "utf-8",(error, data)=>{
+//   if (error){
+//     console.log(error);
+//   }else{
+//     console.log(data);
+//   }
+// })
+// console.log("third");
 
-// write file
-fs.writeFileSync("./greet.txt", "Hello World!");
+// // write file
+// fs.writeFileSync("./greet.txt", "Hello World!");
 
-// async version of file write
+// // async version of file write
 
-fs.writeFile("./greet.txt", " Hello Arvind",{flag: "a"}, (err)=>{
-    if (err){
-      console.log(err);
-    }else{
-      console.log("file written");
+// fs.writeFile("./greet.txt", " Hello Arvind",{flag: "a"}, (err)=>{
+//     if (err){
+//       console.log(err);
+//     }else{
+//       console.log("file written");
+//     }
+// })
+
+// ** fs promise ** 
+const fs = require("node:fs/promises");
+// console.log("first");
+// fs.readFile("./file.txt", 'utf-8')
+//     .then(data=>console.log(data))
+//     .catch(error=> console.log(error))
+
+// console.log("last");
+
+async function readFile(){
+    try{
+      const data = await fs.readFile("file.txt", "utf-8");
+      console.log(data);
+    }catch(error){
+        console.log(error);
+
     }
-})
+
+}
+
+readFile();
