@@ -12,7 +12,13 @@ console.log("Hello ... !!");
 fs.writeFile(path.join(__dirname, 'reply.txt'),'Nice to meet you Mr NODE', (err)=>{
     if (err) throw err;
       console.log("write complete"); 
-  })
+})
+
+fs.appendFile(path.join(__dirname, 'text.txt'),'I am learning node', (err)=>{
+    if (err) throw err;
+      console.log("append complete"); 
+})
+  
   
 
 process.on("uncoughtException", err=>{
